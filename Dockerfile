@@ -18,7 +18,7 @@ RUN \
   # Clean up APT when done
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV PHANTOMJS_VERSION 1.9.7
+ENV PHANTOMJS_VERSION 1.9.8
 
 RUN \
   # Download PhantomJS
@@ -30,7 +30,7 @@ RUN \
   # Make a symbolic link
   ln -s /usr/local/bin/phantomjs /usr/bin/phantomjs && \
   # Remove downloaded files
-  rm -rf ~/*
+  rm -rf *
 
 # Use baseimage-docker's init system
 ENTRYPOINT ["/sbin/my_init", "--"]
